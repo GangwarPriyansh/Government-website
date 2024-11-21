@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+}
+
+
+.govt-logo {
+    height: 100px;
+    width: 100px;
+}
+
+.shc-logo {
+    height: 70px;
+    width: 70px;
+}
+
+.header-text h1,
+.header-text h2 {
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-text {
+    color:var(--primary-color);
+    margin-left: 150px;
+    margin-top: 5px;
+}
+
+
+.login {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.language-select {
+    margin-left: 10px;
+}
+
+#icon{
+	width: 30px;
+	cursor: pointer;
+ }
+:root{
+    --primary-color : 	#edf2fc;
+    --secondary-color : #4CAF50;
+    
+}
+.dark-theme{
+    --primary-color : 	#4CAF50;
+    --secondary-color : #edf2fc;
+
+}
+nav ul {
+    flex: 1;
+    text-align: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: var(--secondary-color);
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    flex: 1;
+    text-align: right;
+    display: block;
+    padding: 10px 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+}
+
+.banner-image {
+    width: 90%;
+    height: 500px;
+    padding: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.azadi-logo {
+    height: 75px;
+    margin-bottom: 10px;
+}
+
+.print-shc {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: var(--primary-color);
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature img {
+    height: 100px;
+}
+
+.feature p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* discription section */
+.website-description {
+    padding: 20px;
+    background-color: var(--primary-color);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.discription-text {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.description-image {
+    width: 15%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.description-content {
+    width: 60%;
+}
+
+.description-image1 {
+    width: 15%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.description-content h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.description-content p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.row {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: var(--primary-color);
+}
+
+.logo {
+    width: 100px;
+}
+
+
+/* Card Section Styling */
+/* Card Section */
+.card-section {
+    padding: 40px;
+    background-color: var(--primary-color);
+    text-align: center;
+    position: relative;
+}
+
+.card-section-heading {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    scrollbar-width: none;
+}
+
+.card-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 300px;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Card pops out */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Sliding Buttons */
+.prev-slide, .next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-slide {
+    left: 10px;
+}
+
+.next-slide {
+    right: 10px;
+}
+
+
+
+/* footer section */
+.footer {
+    background-color: var(--primary-color) ; 
+    color: #333; 
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.footer-column {
+    flex: 1 1 300px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--secondary-color); 
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+}
+
+.footer-column p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #555; 
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    color:var(--secondary-color) ; 
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #333; 
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd; 
+    font-size: 0.8rem;
+    color: #777; 
+}
