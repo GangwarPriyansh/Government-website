@@ -16,6 +16,11 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/home", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "gov-website.html"));
 });
+
+app.get("/contact-us", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "contact-us.html"));
+});
+
 app.get("/success", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "success.html"));
 });
