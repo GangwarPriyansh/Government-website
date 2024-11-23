@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOVERNMENT-WEBSITE</title>
+    <link rel="stylesheet" href="gov-website.css">
+</head>
+
+<body>
+    <header>
+
+        <div class="header-content">
+            <img src="./images/nation_emblem.webp" alt="Government of India Logo" class="govt-logo">
+            <div class="header-text">
+                <h2>Ministry of Agriculture and Farmers Welfare</h2>
+                <h3>Department of Agriculture and Farmers Welfare</h3>
+            </div>
+            <div class="header-right">
+                <img src="./images/plant_img.jpg" alt="Soil Health Card Logo" class="shc-logo">
+                <div class="language-select">
+                    <label for="language">Language:</label>
+                    <select id="language">
+                        <option value="english">English</option>
+                        <option value="hindi">hindi</option>
+                        <option value="tamil">Tamil</option>
+                        <!-- Add more languages as needed -->
+                    </select>
+                </div>
+                <!-- <button class="login">Login</button> -->
+                <button class="login" onclick="location.href='sign-up.html'">Login</button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+
+                <h3 class="nav-text">स्वस्थ धरा, खेत हरा</h3>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="banner">
+            <img src="./images/banner_image.png" alt="Banner Image" class="banner-image">
+            <div class="banner-text">
+            </div>
+        </section>
+        <h2 class="discription-text">OUR AIMS</h2>
+        <section class="website-description">
+            <div class="row">
+                <img src="https://img.freepik.com/premium-vector/world-soil-day-banner-design_1308-121598.jpg?semt=ais_hybrid"
+                    alt="Soil Analysis" class="description-image">
+                <div class="description-content">
+                    <h3>Empowering Farmers with Soil Insights</h3>
+                    <p>
+                        Our website aims to address the challenge of excessive and improper fertilizer usage,
+                        which leads to soil degradation. By analyzing soil health, crop type, and weather data,
+                        we provide tailored recommendations to promote sustainable agricultural practices.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-recommendation-icon-download-in-svg-png-gif-file-formats--user-interface-32px-pack-icons-438971.png?f=webp&w=256"
+                    alt="Fertilizer Recommendations" class="description-image">
+
+                <div class="description-content">
+                    <h3>Data-Driven Recommendations</h3>
+                    <p>
+                        Our platform integrates advanced analytics to recommend optimal fertilizer types and quantities,
+                        ensuring that farmers achieve higher crop yields while maintaining soil fertility for future
+                        generations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="https://logowik.com/content/uploads/images/farm-and-nature6046.logowik.com.webp"
+                    alt="Sustainable Farming" class="description-image">
+                <div class="description-content">
+                    <h3>Promoting Sustainable Farming</h3>
+                    <p>
+                        By empowering farmers with actionable insights, we help them adopt eco-friendly fertilizer
+                        practices.
+                        Our goal is to reduce costs, enhance crop quality, and promote sustainable farming for better
+                        livelihoods.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <img src="https://thumbs.dreamstime.com/b/dashboard-icon-vector-sign-symbol-isolated-white-background-logo-concept-your-web-mobile-app-design-134070079.jpg"
+                    alt="Sustainable Farming" class="description-image">
+                <div class="description-content">
+                    <h3> Nutrients Dashboard</h3>
+                    <p>
+                        By empowering farmers with actionable insights, we help them adopt eco-friendly fertilizer
+                        practices.
+                        Our goal is to reduce costs, enhance crop quality, and promote sustainable farming for better
+                        livelihoods.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- card section -->
+        <section class="card-section">
+            <h2 class="card-section-heading">Explore More</h2>
+            <div class="card-container">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="./images/farmer_img.jpg" alt="Card Image 1" class="card-image">
+                    <h3 class="card-title">Soil Testing Labs</h3>
+                    <p class="card-description">Discover nearby soil testing labs for accurate analysis and
+                        recommendations.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="images/optimal-fertilizer-application-approaches_810293-150401.avif" alt="Card Image 2"
+                        class="card-image">
+                    <h3 class="card-title">Fertilizer Guidelines</h3>
+                    <p class="card-description">Get expert advice on the best fertilizers for your crops and soil type.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="images/card.jpeg" alt="Card Image 3" class="card-image">
+                    <h3 class="card-title">Crop Rotation Tips</h3>
+                    <p class="card-description">Learn about sustainable farming practices to maximize yield.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <img src="images/card.jpeg" alt="Card Image 3" class="card-image">
+                    <h3 class="card-title">Crop Rotation Tips</h3>
+                    <p class="card-description">Learn about sustainable farming practices to maximize yield.</p>
+                </div>
+
+                <!-- Add more cards as needed -->
+            </div>
+            <button class="prev-slide">‹</button>
+            <button class="next-slide">›</button>
+        </section>
+
+        <!-- footer section -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>
+                        Ministry of Agriculture and Farmers Welfare is dedicated to promoting sustainable farming and
+                        supporting
+                        farmers nationwide.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <p>Email: support@agriculture.gov.in</p>
+                    <p>Phone: +91-1234567890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ministry of Agriculture and Farmers Welfare. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+
+    </main>
+    <script src="gov-website.js"></script>
+</body>
+
+</html>
