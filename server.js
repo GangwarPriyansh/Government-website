@@ -25,9 +25,14 @@ app.get("/success", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "success.html"));
 });
 
-app.get("/sign-up", (req, res) => {
+app.get("/signup", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "sign-up.html"));
 });
+
+app.get("/dashboard", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "dashboard", "dashboard.html"));
+});
+
 
 app.post("/signup", async (req, res) => {
     try {
@@ -53,7 +58,7 @@ app.post("/signup", async (req, res) => {
     }
 });
 
-app.get("/sign-in", (req, res) => {
+app.get("/signin", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "sign-in.html"));
 });
 
@@ -68,7 +73,7 @@ app.post("/signin", async (req, res) => {
         if (user) {
             // Check if password matches
             if (user.password === password) {
-                res.redirect("/mainWebsite");  //dashboard vala website
+                res.redirect("/dashboard");  //dashboard vala website
             } else {
                 res.send("Invalid credentials! Please check your password.");
             }
