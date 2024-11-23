@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.outer-box {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/selective-focus-shot-some-wheat-field_181624-4843.avif') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(3px); /* Blur effect for the background */
+    z-index: 1;
+}
+
+.inner-box {
+    position: relative;
+    z-index: 2; /* Ensure text is above the blurred background */
+    width: 400px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.inner-box h1 {
+    font-size: 2rem;
+    color: #4CAF50; /* Green for contrast */
+    margin-bottom: 20px;
+}
+
+.inner-box p {
+    font-size: 1rem;
+    color: #333; /* Dark text for readability */
+    margin-bottom: 20px;
+}
+
+#login-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#login-link:hover {
+    background-color: #3e8e41;
+}
