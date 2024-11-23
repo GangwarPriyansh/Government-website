@@ -1,16 +1,20 @@
 const express = require("express");
 const path = require("path");
-const dbadmin = require("./db/dbadmin"); // Ensure the correct file path
+const dbadmin = require("./db/dbadmin"); 
 const bodyParser = require("body-parser");
-const Register = require("./models/register"); // Ensure this is correctly imported
+const Register = require("./models/register"); 
 
-const app = express(); // Initialize app first
+const app = express(); 
 const PORT = 3000;
 
 // Middleware
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (req, res) => {
+    res.redirect("/home");
+});
 
 // Routes
 app.get("/home", (req, res) => {
@@ -60,6 +64,10 @@ app.post("/signup", async (req, res) => {
 
 app.get("/signin", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "sign-in.html"));
+});
+
+app.get("/aboutus", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "about_us.html"));
 });
 
 app.post("/signin", async (req, res) => {
