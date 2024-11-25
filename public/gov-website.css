@@ -32,50 +32,53 @@ header {
     background-color: var(--primary-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
     background-color: var(--primary-color);
-    padding: 15px 20px;
-    height: 70px;
 }
 
-/* Government Logo */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .govt-logo {
     height: 60px;
     width: 40px;
 }
 
-/* Soil Health Card Logo */
-.shc-logo {
-    height: 60px;
-    width: 60px;
-}
-
-/* Header Text */
 .header-text h2,
 .header-text h3 {
     margin: 0;
     color: #003366;
     font-size: 16px;
+    text-align: left;
 }
 
-/* Header Right Section */
+/* Right Section */
 .header-right {
     display: flex;
     align-items: center;
 }
 
-/* Language Selector */
+.shc-logo {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+}
+
 .language-select {
-    margin-left: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .language-select label {
-    font-size: 14px;
     margin-right: 5px;
+    font-size: 14px;
 }
 
 .language-select select {
@@ -85,13 +88,16 @@ header {
 }
 
 /* Navigation Bar */
+nav {
+    background-color: var(--secondary-color);
+}
+
 nav ul {
     display: flex;
     justify-content: center;
-    background-color: var(--secondary-color); /* Background of the nav links */
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
 }
 
 nav ul li a {
@@ -104,9 +110,8 @@ nav ul li a {
     text-transform: uppercase;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    background-color: var(--primary-color); /* Highlight active links */
+nav ul li a:hover {
+    background-color: #003366;
     color: var(--secondary-color);
     border-radius: 5px;
 }
@@ -118,14 +123,9 @@ nav ul li a.active {
         text-align: center;
     }
 
-    .header-text {
-        margin: 10px 0;
-    }
-
+    .header-left,
     .header-right {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
+        justify-content: center;
     }
 
     nav ul {
@@ -136,7 +136,6 @@ nav ul li a.active {
         margin-bottom: 5px;
     }
 }
-
 
 .banner {
     position: relative;
