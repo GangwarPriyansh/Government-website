@@ -166,15 +166,47 @@ nav {
     text-decoration: underline;
 }
 
-.chart-container {
-    width: 400px; 
-    height: 300px; 
-    margin: 0 auto; 
+    .chart-container {
+        width: 400px; 
+        height: 300px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #ddd; 
+        background-color: #f9f9f9; 
+        border-radius: 8px; 
+}
+
+.chart-container-wrapper {
+    display: flex; /* Use flexbox to arrange charts side by side */
+    justify-content: center; /* Center the charts horizontally */
+    gap: 20px; /* Add space between the charts */
+    margin: 20px auto; /* Center the entire wrapper on the page */
+    max-width: 900px; /* Set a maximum width for the container */
+}
+.download-button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+}
+
+/* Center the dropdowns */
+.dropdown-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ddd; 
-    background-color: #f9f9f9; 
-    border-radius: 8px; 
+    flex-direction: column; /* Stack the dropdowns vertically */
+    align-items: center; /* Center the dropdowns horizontally */
+    justify-content: center; /* Center the dropdowns vertically */
+    height: 90vh; /* Full height of the viewport */
+    gap: 10px; /* Add space between the dropdowns */
 }
