@@ -25,24 +25,33 @@ body {
 }
 
 /* Header Content */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-color);
     padding: 15px 20px;
+    height: 70px;
 }
 
 /* Government Logo */
 .govt-logo {
-    height: 70px;
-    width: 50px;
+    height: 60px;
+    width: 40px;
 }
 
 /* Soil Health Card Logo */
 .shc-logo {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
 }
 
 /* Header Text */
@@ -77,16 +86,12 @@ body {
 
 /* Navigation Bar */
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
-    background-color: var(--secondary-color);
-}
-
-nav ul li {
+    background-color: var(--secondary-color); /* Background of the nav links */
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 nav ul li a {
@@ -101,7 +106,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Highlight active links */
     color: var(--secondary-color);
     border-radius: 5px;
 }
@@ -152,10 +157,13 @@ nav ul li a.active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff; /* Text color */
-    font-size: 2.5rem; /* Adjust size as needed */
+    color: #fff;
+    /* Text color */
+    font-size: 2.5rem;
+    /* Adjust size as needed */
     font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Optional text shadow for readability */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    /* Optional text shadow for readability */
 }
 
 .azadi-logo {
@@ -290,12 +298,15 @@ nav ul li a.active {
     padding: 20px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Card pops out */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transform: translateY(-10px);
+    /* Card pops out */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
 }
 
 .card-image {
@@ -318,7 +329,8 @@ nav ul li a.active {
 }
 
 /* Sliding Buttons */
-.prev-slide, .next-slide {
+.prev-slide,
+.next-slide {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -344,11 +356,11 @@ nav ul li a.active {
 
 /* footer section */
 .footer {
-    background-color: var(--primary-color) ; 
-    color: #333; 
+    background-color: var(--primary-color);
+    color: #333;
     padding: 20px 0;
     font-family: Arial, sans-serif;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer-container {
@@ -369,7 +381,7 @@ nav ul li a.active {
 .footer-column h3 {
     margin-bottom: 10px;
     font-size: 1.2rem;
-    color: var(--secondary-color); 
+    color: var(--secondary-color);
     border-bottom: 2px solid #4CAF50;
     padding-bottom: 5px;
 }
@@ -377,7 +389,7 @@ nav ul li a.active {
 .footer-column p {
     margin: 10px 0;
     font-size: 0.9rem;
-    color: #555; 
+    color: #555;
 }
 
 .footer-column ul {
@@ -391,20 +403,20 @@ nav ul li a.active {
 }
 
 .footer-column ul li a {
-    color:var(--secondary-color) ; 
+    color: var(--secondary-color);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-column ul li a:hover {
-    color: #333; 
+    color: #333;
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
     padding-top: 10px;
-    border-top: 1px solid #ddd; 
+    border-top: 1px solid #ddd;
     font-size: 0.8rem;
-    color: #777; 
+    color: #777;
 }
