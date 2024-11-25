@@ -6,14 +6,15 @@
 	<meta name="robots" content="nofollow, noindex">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="dashboard.css">
-	<title>Displaying dashboard</title>
+	<title>Displaying Dashboard</title>
 </head>
 
 <body>
-
+	<!-- Navigation Header -->
 	<header class="navigation-bar">
 		<div class="header-left">
-			<img src="https://soilhealth.dac.gov.in/files/images/Emblem_of_India.png" alt="Emblem of India" class="emblem">
+			<img src="../images/Emblem_of_India.svg-removebg-preview.png" alt="Emblem of India"
+				class="emblem">
 			<div class="header-text">
 				<p>Government of India</p>
 				<p>Ministry of Agriculture and Farmers Welfare</p>
@@ -30,16 +31,40 @@
 		</nav>
 	</header>
 
-	<div class="chart">
-		<div class="chart_types">
-			<button onclick="setChartType('bar')">States</button>
-			<button onclick="setChartType('line')">district</button>
-			<button onclick="setChartType('doughnut')">block</button>
-			<button onclick="setChartType('polarArea')">village</button>
-			<button onclick="setChartType('radar')">Year</button>
+	<!-- Dropdowns and Graph Section -->
+	<main style="padding: 20px;">
+		<!-- Dropdown for State -->
+		<div>
+			<label for="state-select">Select State:</label>
+			<select id="state-select">
+				<option value="">Select State</option>
+			</select>
 		</div>
-		<canvas id="myChart"></canvas>
-	</div>
+
+		<!-- Dropdown for District -->
+		<div>
+			<label for="district-select">Select District:</label>
+			<select id="district-select">
+				<option value="">Select District</option>
+			</select>
+		</div>
+
+		<!-- NPK Pie Chart Section -->
+		<div style="margin-top: 30px;">
+			<h2>NPK Values (Pie Chart)</h2>
+			<div class="chart-container">
+				<canvas id="npkChart"></canvas>
+			</div>
+		</div>
+
+		<!-- PH Bar Chart Section -->
+		<div style="margin-top: 30px;">
+			<h2>pH Values (Bar Chart)</h2>
+			<div class="chart-container">
+				<canvas id="phChart"></canvas>
+			</div>
+		</div>
+	</main>
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="dashboard.js"></script>

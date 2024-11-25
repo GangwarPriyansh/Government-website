@@ -11,7 +11,8 @@
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
-    overflow: hidden;
+    overflow: auto;
+    background-color: #DFF7E7;
 }
 
 .chart {
@@ -30,13 +31,6 @@ body {
 	padding: 10px 25px;
 }
 
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 
 .outer-box {
@@ -170,4 +164,17 @@ nav {
 
 .signup-footer a:hover {
     text-decoration: underline;
+}
+
+.chart-container {
+    width: 400px; 
+    height: 300px; 
+    margin: 0 auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
 }

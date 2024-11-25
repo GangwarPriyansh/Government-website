@@ -1,107 +1,117 @@
-// let ctx = document.getElementById('myChart');
-// let myChart;
-// let Jsondata;
+// References for the dropdowns and charts
+const stateSelect = document.getElementById("state-select");
+const districtSelect = document.getElementById("district-select");
+const npkChartCanvas = document.getElementById("npkChart").getContext("2d");
+const phChartCanvas = document.getElementById("phChart").getContext("2d");
+Chart.defaults.plugins.legend.display = true; // Optional: Adjust legend display
+Chart.defaults.maintainAspectRatio = false;  // Ensure charts resize correctly
 
-// fetch("data.json")
-// .then(function(response){
-//    if(response.status == 200){
-//       return response.json();
-//    }
-// })
-// .then(function(data){ 
-//    Jsondata = data; 
-//    createChart(Jsondata, 'bar');
-// });	
 
-// function createChart(data, type){
-// 	myChart = new Chart(ctx, {
-// 		type: type, 
-// 		data: {
-// 		  labels: data.map(row => row.month), 
-// 		  datasets: [{
-// 		    label: '# of Income',
-// 		    data: data.map(row => row.income),
-// 		    borderWidth: 1
-// 		  }]
-// 		},
-// 		options: {
-// 		  scales: {
-// 		    y: {
-// 		      beginAtZero: true
-// 		    }
-// 		  },
-// 		  responsive: true,
-// 		  maintainAspectRatio: false,
-// 		}
-// 	});
-// }
+let npkChart;
+let phChart;
 
-// function setChartType(chartType){
-// 	myChart.destroy();
-// 	createChart(Jsondata, chartType);
-// }
-let ctx = document.getElementById('myChart');
-let myChart;
-let Jsondata;
+// Load data from data.json
+let data;
 
+// Fetch JSON data
 fetch("data.json")
-.then(function(response){
-   if(response.status == 200){
-      return response.json();
-   }
-})
-.then(function(data){ 
-   Jsondata = data; 
-   createChart(Jsondata, 'bar');
-});	
+    .then((response) => response.json())
+    .then((jsonData) => {
+        data = jsonData;
+        populateStateDropdown();
+    })
+    .catch((err) => console.error("Error fetching data:", err));
 
-function createChart(data, type){
-    const labels = data.map(row => `Entry ${data.indexOf(row) + 1}`); // Assign dynamic labels
-    const N = data.map(row => row.N);
-    const P = data.map(row => row.P);
-    const K = data.map(row => row.K);
-    const temperature = data.map(row => row.temperature);
-    
-    myChart = new Chart(ctx, {
-        type: type, 
-        data: {
-            labels: labels, // Use dynamic labels
-            datasets: [
-                {
-                    label: 'N Value',
-                    data: N,
-                    borderWidth: 1
-                },
-                {
-                    label: 'P Value',
-                    data: P,
-                    borderWidth: 1
-                },
-                {
-                    label: 'K Value',
-                    data: K,
-                    borderWidth: 1
-                },
-                {
-                    label: 'Temperature',
-                    data: temperature,
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            },
-            responsive: true,
-            maintainAspectRatio: false,
-        }
+// Populate state dropdown
+function populateStateDropdown() {
+    const states = [...new Set(data.map((entry) => entry.state))]; // Extract unique states
+    states.forEach((state) => {
+        const option = document.createElement("option");
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
     });
 }
 
-function setChartType(chartType){
-    myChart.destroy();
-    createChart(Jsondata, chartType);
+// Populate district dropdown based on selected state
+stateSelect.addEventListener("change", () => {
+    const selectedState = stateSelect.value;
+    districtSelect.innerHTML = '<option value="">Select District</option>'; // Reset districts
+
+    if (selectedState) {
+        const districts = [
+            ...new Set(data.filter((entry) => entry.state === selectedState).map((entry) => entry.district)),
+        ];
+        districts.forEach((district) => {
+            const option = document.createElement("option");
+            option.value = district;
+            option.textContent = district;
+            districtSelect.appendChild(option);
+        });
+    }
+});
+
+// Handle district selection and update charts
+districtSelect.addEventListener("change", () => {
+    const selectedDistrict = districtSelect.value;
+    if (selectedDistrict) {
+        const filteredData = data.find(
+            (entry) => entry.state === stateSelect.value && entry.district === selectedDistrict
+        );
+        if (filteredData) {
+            updateCharts(filteredData);
+        }
+    }
+});
+
+// Update NPK Pie Chart and pH Bar Chart
+function updateCharts(filteredData) {
+    // Destroy previous charts
+    if (npkChart) npkChart.destroy();
+    if (phChart) phChart.destroy();
+
+    // NPK Pie Chart
+    npkChart = new Chart(npkChartCanvas, {
+        type: "pie",
+        data: {
+            labels: ["Nitrogen (N)", "Phosphorus (P)", "Potassium (K)"],
+            datasets: [
+                {
+                    data: [filteredData.N, filteredData.P, filteredData.K],
+                    backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: "top",
+                },
+            },
+        },
+    });
+
+    // pH Bar Chart
+    phChart = new Chart(phChartCanvas, {
+        type: "bar",
+        data: {
+            labels: ["pH Value"],
+            datasets: [
+                {
+                    label: "pH",
+                    data: [filteredData.pH],
+                    backgroundColor: "#4CAF50",
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
 }
