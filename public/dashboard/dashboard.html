@@ -13,8 +13,7 @@
 	<!-- Navigation Header -->
 	<header class="navigation-bar">
 		<div class="header-left">
-			<img src="../images/Emblem_of_India.svg-removebg-preview.png" alt="Emblem of India"
-				class="emblem">
+			<img src="../images/Emblem_of_India.svg-removebg-preview.png" alt="Emblem of India" class="emblem">
 			<div class="header-text">
 				<p>Government of India</p>
 				<p>Ministry of Agriculture and Farmers Welfare</p>
@@ -31,45 +30,40 @@
 		</nav>
 	</header>
 
-	<!-- Dropdowns and Graph Section -->
-	<!-- <main style="padding: 20px;"> -->
-		<!-- Dropdown for State -->
-		<main class="dropdown-container">
-		<div>
+	<!-- select state and district section -->
+	<main class="dropdown-container">
+		<div class="Dropdown">
 			<label for="state-select">Select State:</label>
 			<select id="state-select">
 				<option value="">Select State</option>
 			</select>
-		</div>
-
-		<!-- Dropdown for District -->
-		<div>
 			<label for="district-select">Select District:</label>
 			<select id="district-select">
 				<option value="">Select District</option>
 			</select>
 		</div>
+		
 
 		<!-- NPK Pie Chart Section -->
 		<div class="chart-container-wrapper">
-		<div style="margin-top: 50px;">
-			<h2>NPK Values (Pie Chart)</h2>
-			<div class="chart-container">
-				<canvas id="npkChart"></canvas>
+			<div style="margin-top: 50px;">
+				<h2>NPK Values (Pie Chart)</h2>
+				<div class="chart-container">
+					<canvas id="npkChart"></canvas>
+				</div>
 			</div>
-		</div>
 
-		<!-- PH Bar Chart Section -->
-		<div style="margin-top: 50px;">
-			<h2>pH Values (Bar Chart)</h2>
-			<div class="chart-container">
-				<canvas id="phChart"></canvas>
+			<!-- PH Bar Chart Section -->
+			<div style="margin-top: 50px;">
+				<h2>pH Values (Bar Chart)</h2>
+				<div class="chart-container1">
+					<canvas id="phChart"></canvas>
+				</div>
 			</div>
 		</div>
 		<div class="download-button-container">
 			<!-- Download Button -->
 			<button class="download-button">Download Chart</button>
-		</div>
 		</div>
 	</main>
 
