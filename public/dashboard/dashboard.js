@@ -115,3 +115,25 @@ function updateCharts(filteredData) {
         },
     });
 }
+document.getElementById('download-button').addEventListener('click', function () {
+    // const npkValues = {
+    //     Nitrogen: Jsondata[0].N,
+    //     Phosphorus: Jsondata[0].P,
+    //     Potassium: Jsondata[0].K,
+    //     pH: Jsondata[0].ph,
+    // };
+    const { jsPDF } = window.jspdf; // Access jsPDF
+    const pdf = new jsPDF('landscape', 'mm', 'a4'); // Create a PDF in landscape mode
+    const chartContainer = document.querySelector('.chart-container-wrapper');
+
+    // Convert the charts to images using html2canvas
+    html2canvas(chartContainer).then(canvas => {
+        const imgData = canvas.toDataURL('image/png'); // Get the image data from the canvas
+        const imgWidth = 290; // Width of the image in the PDF (adjust as needed)
+        const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
+        
+        pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight); // Add image to PDF
+        pdf.save('charts.pdf'); // Download the PDF
+    });
+});
+

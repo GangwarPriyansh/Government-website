@@ -6,13 +6,17 @@
 }
 
 /* Header Styling */
+
 .navigation-bar {
-  background-color: #003366;
-  color: white;
-  padding: 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Translucent background */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  position: relative;
 }
 
 .header-left {
@@ -34,16 +38,23 @@ nav ul.nav-links {
   display: flex;
 }
 
-nav ul.nav-links li {
-  margin: 0 15px;
+nav-links li {
+  margin: 0;
 }
 
-nav ul.nav-links li a {
-  color: white;
+.nav-links li a {
   text-decoration: none;
   font-weight: bold;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
+.nav-links li a:hover {
+  background-color: #4CAF50;
+  color: white;
+}
 /* About Section */
 .about-section {
   padding: 50px 20px;
@@ -55,6 +66,7 @@ nav ul.nav-links li a {
 
 /* About Us Heading */
 .about-heading {
+  color: #000000;
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
@@ -62,6 +74,7 @@ nav ul.nav-links li a {
 
 /* About Content */
 .about-content {
+  color: black;
   font-size: 18px;
   line-height: 1.8;
   text-align: center;
@@ -71,6 +84,7 @@ nav ul.nav-links li a {
 
 /* Vision Section */
 .vision-section {
+  color: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,12 +92,15 @@ nav ul.nav-links li a {
 }
 
 .vision-section h4 {
+  color: #000000;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .vision-section p {
+   font-weight: bold;
+  color: #000000;
   font-size: 16px;
   max-width: 500px;
 }
@@ -95,6 +112,8 @@ nav ul.nav-links li a {
 
 /* What We Do Section */
 .what-we-do-section {
+  font-weight: bold;
+  color: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -118,9 +137,9 @@ nav ul.nav-links li a {
 
 /* Footer Section */
 .footer-section {
-  background-color: #003366;
+  background-color:#4CAF50;
   color: white;
-  padding: 30px 20px;
+  padding: 10px 10px;
 }
 
 .footer-container {
