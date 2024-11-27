@@ -3,6 +3,8 @@ const path = require("path");
 const dbadmin = require("./db/dbadmin"); 
 const bodyParser = require("body-parser");
 const Register = require("./models/register"); 
+const Feedback = require("./models/feedback");
+require("./db/feedbackdb");
 
 const app = express(); 
 const PORT = 3000;
@@ -92,6 +94,21 @@ app.post("/signin", async (req, res) => {
         res.status(500).send("Server error. Please try again later.");
     }
 });
+
+
+app.post("/contact-us", async (req, res) => {
+    try {
+        const { name, email, phone, message } = req.body;
+        const feedback = new Feedback({ name, email, phone, message });
+        await feedback.save();
+
+        res.redirect("/success"); 
+    } catch (error) {
+        console.error("Error saving feedback:", error);
+        res.status(500).send("An error occurred while saving your feedback. Please try again.");
+    }
+});
+
 
 // Start the server
 app.listen(PORT, () => {
